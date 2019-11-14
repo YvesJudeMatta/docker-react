@@ -9,11 +9,13 @@ services:
     volumes:
       - /app/node_modules
       - .:/app
-  tests:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    volumes:
-      - /app/node_modules
-      - .:/app
-    command: ['npm', 'run', 'test']
+  # use "docker exec it <conainer_id> npm run test" in new terminal
+  # while "web" container is running instead
+  # tests:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.dev
+  #   volumes:
+  #     - /app/node_modules
+  #     - .:/app
+  #   command: ['npm', 'run', 'test']
